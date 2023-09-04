@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 import Header from '@/app/components/main/Header/Header';
 import cn from 'classnames';
 const inter = Inter({ subsets: ['latin'] });
+import Logo from '../public/logo-black-transparent-hat-3.png';
+import { headerMoto } from '@/data/header-moto';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={cn(inter.className, 'container mx-auto')}>
-        <Header />
+        <Header logo={Logo} logoWidth={170} headerMoto={headerMoto} />
         {children}
         <footer>yyyy</footer>
       </body>
