@@ -6,6 +6,7 @@ import cn from 'classnames';
 const inter = Inter({ subsets: ['latin'] });
 import Logo from '../public/logo-black-transparent-hat-3.png';
 import { headerMoto } from '@/data/header-moto';
+import Footer from '@/app/components/main/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={cn(inter.className, 'container mx-auto')}>
         <Header logo={Logo} logoWidth={170} headerMoto={headerMoto} />
         {children}
-        <footer>yyyy</footer>
+        <Footer />
       </body>
     </html>
   );

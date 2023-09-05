@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className='flex justify-between items-center min-h-[100px] border-b-[6px] border-black'>
+    <header className='flex justify-between items-center min-h-[100px] border-b-[6px] border-black'>
       <Image src={logo} alt='Logo' width={logoWidth} />
       <div className='font-black text-xl'>{headerMoto}</div>
       {!isMenuOpen ? (
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
           </div>
         </>
       )}
-    </div>
+    </header>
   );
 };
 
