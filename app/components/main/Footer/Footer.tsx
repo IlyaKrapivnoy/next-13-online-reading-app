@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <Image src={Skull} width={90} alt='ds' className='scale-x-[-1] mr-10' />
         <div className='mr-8 font-black text-lg'>
           <p>Want to talk to me?</p>
-          <p>Send me an email</p>
+          <p>Send an email</p>
         </div>
         <div>
           <Link

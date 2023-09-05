@@ -17,16 +17,22 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
 
   return (
     <header className='flex justify-between items-center min-h-[100px] border-b-[6px] border-black'>
-      <Image src={logo} alt='Logo' width={logoWidth} />
-      <div className='font-black text-xl'>{headerMoto}</div>
+      <div className='w-1/5'>
+        <Link href='/'>
+          <Image src={logo} alt='Logo' width={logoWidth} />
+        </Link>
+      </div>
+      <div className='w-3/5 font-black text-xl text-center'>{headerMoto}</div>
       {!isMenuOpen ? (
-        <Image
-          src={Menu}
-          width={30}
-          onClick={() => setIsMenuOpen(true)}
-          alt='menu icon'
-          className='cursor-pointer'
-        />
+        <div className='w-1/5 flex justify-end'>
+          <Image
+            src={Menu}
+            width={30}
+            onClick={() => setIsMenuOpen(true)}
+            alt='menu icon'
+            className='cursor-pointer '
+          />
+        </div>
       ) : (
         <>
           <Image
