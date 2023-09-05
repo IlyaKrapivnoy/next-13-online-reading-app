@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import Menu from '../../../../public/menu-icon.png';
-import Close from '../../../../public/cross-icon.png';
+import Menu from '../../../public/menu-icon.png';
+import Close from '../../../public/cross-icon.png';
 import Link from 'next/link';
 import Content from '@/app/books/page';
 import Create from '@/app/publish/page';

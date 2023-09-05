@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Skull from '../../../../public/skull.png';
+import Skull from '../../../public/skull.png';
 import Image from 'next/image';
 import { currentYear } from '@/app/utils';
 import { className } from 'postcss-selector-parser';

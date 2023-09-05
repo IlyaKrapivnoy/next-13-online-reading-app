@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className='flex justify-center items-center min-h-[800px]'>
-      <Link href='/'>
+      <Link href='/books'>
         <Image src={ClickableImg} width={400} alt='Clickable image' />
       </Link>
     </div>
