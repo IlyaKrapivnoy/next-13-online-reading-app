@@ -48,13 +48,13 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
             }
           >
             <nav className='flex flex-col text-2xl font-black '>
-              <Link href='/' className='hover:text-gray-600'>
+              <Link href='/' as='style' className='hover:text-gray-600'>
                 Home
               </Link>
-              <Link href='/' className='hover:text-gray-600'>
+              <Link href='/' as='style' className='hover:text-gray-600'>
                 About
               </Link>
-              <Link href='/' className='hover:text-gray-600'>
+              <Link href='/' as='style' className='hover:text-gray-600'>
                 Contact
               </Link>
             </nav>
