@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Skull from '../../../../public/skull.png';
 import Image from 'next/image';
+import { currentYear } from '@/app/utils';
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
         </div>
       </div>
       <p className='text-sm'>
-        &copy; Inner Town Library, 2023
+        &copy; Inner Town Library, {currentYear}
         <br />{' '}
         <span className='italic'>
           hooligan association of sophisticated readers
