@@ -5,9 +5,8 @@ import Image, { StaticImageData } from 'next/image';
 import Menu from '../../../public/menu-icon.png';
 import Close from '../../../public/cross-icon.png';
 import Link from 'next/link';
-import Content from '@/app/books/page';
-import Create from '@/app/publish/page';
 import { navigation } from '@/data/header';
+import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
   logo: StaticImageData;
@@ -16,6 +15,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
+  const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
             width={30}
             onClick={() => setIsMenuOpen(true)}
             alt='menu icon'
-            className='cursor-pointer '
+            className='cursor-pointer'
           />
         </div>
       ) : (
@@ -56,7 +56,9 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
                   <Link
                     key={name}
                     href={href}
-                    className='hover:text-gray-600'
+                    className={`hover:text-gray-600 ${
+                      pathName === href ? 'text-red-500' : ''
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {name}
