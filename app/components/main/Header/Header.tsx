@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
           width={30}
           onClick={() => setIsMenuOpen(true)}
           alt='menu icon'
+          className='cursor-pointer'
         />
       ) : (
         <>
@@ -33,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
             width={30}
             onClick={() => setIsMenuOpen(false)}
             alt='menu icon'
-            className='z-10'
+            className='cursor-pointer z-10'
           />
           <div
             className={
