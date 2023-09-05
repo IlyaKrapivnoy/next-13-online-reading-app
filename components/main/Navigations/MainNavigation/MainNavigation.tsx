@@ -12,6 +12,7 @@ const MainNavigation: React.FC<MainNavigationProps> = ({
   handleCloseMobileMenu
 }) => {
   const isActiveLink = useIsActiveLink();
+
   return (
     <div
       className={
