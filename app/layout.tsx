@@ -5,7 +5,7 @@ import Header from '@/components/main/Header/Header';
 import cn from 'classnames';
 const inter = Inter({ subsets: ['latin'] });
 import Logo from '../public/logo-black-transparent-hat-3.png';
-import { headerMoto } from '@/data/header-moto';
+import { headerMoto } from '@/data/header';
 import Footer from '@/components/main/Footer/Footer';
 import React from 'react';
 

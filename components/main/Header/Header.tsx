@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Menu from '../../../public/menu-icon.png';
 import Close from '../../../public/cross-icon.png';
 import Link from 'next/link';
 import Content from '@/app/books/page';
 import Create from '@/app/publish/page';
+import { navigation } from '@/data/header';
 
 interface HeaderProps {
   logo: StaticImageData;
@@ -49,28 +50,19 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
               'absolute top-0 bottom-0 right-0 left-0 bg-gray-50 flex justify-center items-center'
             }
           >
-            <nav className='flex flex-col text-2xl font-black '>
-              <Link
-                href='/'
-                className='hover:text-gray-600'
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href='/books'
-                className='hover:text-gray-600'
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Books
-              </Link>
-              <Link
-                href='/publish'
-                className='hover:text-gray-600'
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Publish
-              </Link>
+            <nav className='flex flex-col text-2xl font-black'>
+              {navigation.map(
+                ({ href, name }: { href: string; name: string }): ReactNode => (
+                  <Link
+                    key={name}
+                    href={href}
+                    className='hover:text-gray-600'
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {name}
+                  </Link>
+                )
+              )}
             </nav>
           </div>
         </>
