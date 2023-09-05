@@ -1,12 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Header from '@/app/components/main/Header/Header';
+import Header from '@/components/main/Header/Header';
 import cn from 'classnames';
 const inter = Inter({ subsets: ['latin'] });
 import Logo from '../public/logo-black-transparent-hat-3.png';
-import { headerMoto } from '@/data/header-moto';
-import Footer from '@/app/components/main/Footer/Footer';
+import { headerMoto } from '@/data/header';
+import Footer from '@/components/main/Footer/Footer';
 import React from 'react';
 
 export const metadata: Metadata = {
