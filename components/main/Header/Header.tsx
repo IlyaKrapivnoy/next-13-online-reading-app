@@ -18,6 +18,20 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
   const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleBodyOverflow = (overflow: boolean) => {
+    document.body.classList.toggle('overflow-hidden', overflow);
+  };
+
+  const openMobileMenu = () => {
+    setIsMenuOpen(true);
+    toggleBodyOverflow(true);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    toggleBodyOverflow(false);
+  };
+
   return (
     <header className='flex justify-between items-center min-h-[100px] border-b-[6px] border-black'>
       <div className='w-1/5'>
@@ -31,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
           <Image
             src={Menu}
             width={30}
-            onClick={() => setIsMenuOpen(true)}
+            onClick={openMobileMenu}
             alt='menu icon'
             className='cursor-pointer'
           />
@@ -41,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
           <Image
             src={Close}
             width={30}
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMobileMenu}
             alt='menu icon'
             className='cursor-pointer z-10'
           />
@@ -59,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
                     className={`hover:text-gray-600 ${
                       pathName === href ? 'text-red-500' : ''
                     }`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={closeMobileMenu}
                   >
                     {name}
                   </Link>
