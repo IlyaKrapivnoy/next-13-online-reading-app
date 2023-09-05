@@ -5,6 +5,8 @@ import Image, { StaticImageData } from 'next/image';
 import Menu from '../../../../public/menu-icon.png';
 import Close from '../../../../public/cross-icon.png';
 import Link from 'next/link';
+import Content from '@/app/books/page';
+import Create from '@/app/publish/page';
 
 interface HeaderProps {
   logo: StaticImageData;
@@ -48,14 +50,26 @@ const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
             }
           >
             <nav className='flex flex-col text-2xl font-black '>
-              <Link href='/' as='style' className='hover:text-gray-600'>
+              <Link
+                href='/'
+                className='hover:text-gray-600'
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
-              <Link href='/' as='style' className='hover:text-gray-600'>
-                About
+              <Link
+                href='/books'
+                className='hover:text-gray-600'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Books
               </Link>
-              <Link href='/' as='style' className='hover:text-gray-600'>
-                Contact
+              <Link
+                href='/publish'
+                className='hover:text-gray-600'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Publish
               </Link>
             </nav>
           </div>
