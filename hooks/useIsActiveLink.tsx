@@ -1,13 +1,9 @@
 import { usePathname } from 'next/navigation';
 
 const useIsActiveLink = () => {
-  const pathName = usePathname();
+  const pathName: string = usePathname();
 
-  const isActiveLink = (href: string): boolean => {
-    return pathName === href;
-  };
-
-  return isActiveLink;
+  return (href: string): boolean => pathName === href;
 };
 
 export default useIsActiveLink;

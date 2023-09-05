@@ -1,13 +1,10 @@
 'use client';
 
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import MenuIcon from '../../../public/menu-icon.png';
 import CloseIcon from '../../../public/cross-icon.png';
-import ArrowIcon from '../../../public/arrow-icon.png';
 import Link from 'next/link';
-import { navigation } from '@/data/header';
-import { usePathname } from 'next/navigation';
 import MainNavigation from '@/components/main/Navigations/MainNavigation/MainNavigation';
 
 interface HeaderProps {
@@ -17,24 +14,21 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ logo, logoWidth, headerMoto }) => {
-  const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleBodyOverflow = (overflow: boolean) => {
+  const toggleBodyOverflow = (overflow: boolean): void => {
     document.body.classList.toggle('overflow-hidden', overflow);
   };
 
-  const openMobileMenu = () => {
+  const openMobileMenu = (): void => {
     setIsMenuOpen(true);
     toggleBodyOverflow(true);
   };
 
-  const closeMobileMenu = () => {
+  const closeMobileMenu = (): void => {
     setIsMenuOpen(false);
     toggleBodyOverflow(false);
   };
-
-  const isActiveLink = (href: string): Boolean => pathName === href;
 
   return (
     <header className='flex justify-between items-center min-h-[100px] border-b-[6px] border-black'>
