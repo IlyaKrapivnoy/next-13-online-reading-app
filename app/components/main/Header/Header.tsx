@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import Menu from '../../../../public/menu-icon.png';
 import Close from '../../../../public/cross-icon.png';

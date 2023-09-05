@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 import Logo from '../public/logo-black-transparent-hat-3.png';
 import { headerMoto } from '@/data/header-moto';
 import Footer from '@/app/components/main/Footer/Footer';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,10 +21,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={cn(inter.className, 'container mx-auto')}>
+      <body
+        className={cn(
+          inter.className,
+          'container mx-auto min-h-screen flex flex-col'
+        )}
+      >
         <Header logo={Logo} logoWidth={170} headerMoto={headerMoto} />
-        {children}
-        <Footer />
+        <main className='className="flex-grow"'>{children}</main>
+        <Footer className='mt-auto' />
       </body>
     </html>
   );

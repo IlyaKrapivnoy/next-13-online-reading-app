@@ -3,10 +3,17 @@ import Link from 'next/link';
 import Skull from '../../../../public/skull.png';
 import Image from 'next/image';
 import { currentYear } from '@/app/utils';
+import { className } from 'postcss-selector-parser';
 
-const Footer = () => {
+interface FooterProps {
+  className: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className='flex justify-between items-center min-h-[100px] border-t-[6px] border-black'>
+    <footer
+      className={`${className} flex justify-between items-center min-h-[100px] border-t-[6px] border-black`}
+    >
       <div className='flex items-center'>
         <Image src={Skull} width={90} alt='ds' className='scale-x-[-1] mr-10' />
         <div className='mr-8 font-black text-lg'>
