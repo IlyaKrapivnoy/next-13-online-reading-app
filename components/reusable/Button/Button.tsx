@@ -2,10 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 
 export interface ButtonProps {
-  href: string;
   title: string;
 }
-export const LinkButton: React.FC<ButtonProps> = ({ href, title }) => {
+
+export interface LinkButtonProps extends ButtonProps {
+  href: string;
+}
+
+export interface RegularButtonProps extends ButtonProps {
+  onClick: () => void;
+}
+
+export const LinkButton: React.FC<LinkButtonProps> = ({ href, title }) => {
   return (
     <Link
       className='border-[3px] border-black py-[10px] px-[20px] hover:shadow-custom transition-shadow'
@@ -13,5 +21,19 @@ export const LinkButton: React.FC<ButtonProps> = ({ href, title }) => {
     >
       {title}
     </Link>
+  );
+};
+
+export const RegularButton: React.FC<RegularButtonProps> = ({
+  onClick,
+  title
+}) => {
+  return (
+    <button
+      className='border-[3px] border-black py-[10px] px-[20px] hover:shadow-custom transition-shadow'
+      onClick={onClick}
+    >
+      {title}
+    </button>
   );
 };
