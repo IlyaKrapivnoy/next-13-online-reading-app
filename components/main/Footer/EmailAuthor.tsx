@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Skull from '@/public/skull.png';
-import Link from 'next/link';
+import { LinkButton } from '@/components/reusable/Button/Button';
 
+const EMAIL_AUTHOR: string = 'mailto:example@example.com';
 const EmailAuthor = () => {
   return (
     <div className='flex items-center w-2/5'>
@@ -12,12 +13,7 @@ const EmailAuthor = () => {
         <p>Send an email</p>
       </div>
       <div>
-        <Link
-          className='border-[3px] border-black py-[10px] px-[20px] hover:shadow-custom transition-shadow'
-          href='mailto:example@example.com'
-        >
-          Email Author
-        </Link>
+        <LinkButton title='Email Author' href={EMAIL_AUTHOR} />
       </div>
     </div>
   );
