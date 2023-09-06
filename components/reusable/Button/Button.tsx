@@ -10,7 +10,7 @@ export interface LinkButtonProps extends ButtonProps {
 }
 
 export interface RegularButtonProps extends ButtonProps {
-  onClick: () => void;
+  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const LinkButton: React.FC<LinkButtonProps> = ({ href, title }) => {
