@@ -1,5 +1,5 @@
 import React from 'react';
-import { currentYear } from '@/app/utils';
+import { currentYear } from '@/helpers';
 
 const Copyright = () => {
   return (

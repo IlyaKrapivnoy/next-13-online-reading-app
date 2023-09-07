@@ -7,3 +7,5 @@ export const transformUrlToTitle = (input: string): string => {
     .replace(/-/g, ' ')
     .replace(/\b\w/g, match => match.toUpperCase());
 };
+
+export const currentYear: number = new Date().getFullYear();
